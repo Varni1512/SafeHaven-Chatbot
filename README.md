@@ -1,34 +1,90 @@
 # PWDVA Chatbot
 
-A chatbot for the Protection of Women from Domestic Violence Act, 2005, using a KNN model. Available as a web app and a Telegram bot.
+A chatbot for the **Protection of Women from Domestic Violence Act, 2005**, leveraging a **K-Nearest Neighbors (KNN) model**. This chatbot is available as a **web application**, ensuring accessibility and ease of use.
 
-## Setup
-1. Install Python 3.8+.
-2. Install dependencies: `pip install -r requirements.txt`.
-3. Install FFmpeg for voice processing (required for Telegram bot):
-   - On Windows: Download from FFmpeg website and add to PATH.
-   - On macOS: `brew install ffmpeg`.
-   - On Linux: `sudo apt-get install ffmpeg`.
-4. Place `pwdva_data.csv` in the root directory.
-5. Train the model: `python train_model.py`.
-6. Run the Flask server: `python chatbot_server.py`.
-7. Run the Telegram bot:
-   - Get a bot token from BotFather on Telegram.
-   - Replace `YOUR_TELEGRAM_BOT_TOKEN` in `telegram_bot.py` with your token.
-   - Run `python telegram_bot.py`.
-8. Access the web app at `http://localhost:5000` or search for your bot on Telegram.
+---
 
-## Features
-- Handles PWDVA-related questions using a KNN model trained on `pwdva_data.csv`.
-- Supports voice input via the microphone button (web) or voice messages (Telegram).
-- Telegram bot allows anonymous, secure interaction with no digital trace.
+## 🚀 Features
 
-## Files
-- `static/styles.css`: Chatbot styling (web).
-- `static/script.js`: Frontend logic (web).
-- `static/pwdva_data.json`: Optional JSON dataset.
-- `templates/index.html`: Chatbot interface (web).
-- `train_model.py`: Trains the KNN model.
-- `chatbot_server.py`: Flask server with conversational responses.
-- `telegram_bot.py`: Telegram bot script.
-- `pwdva_knn_model.pkl`: Trained model.
+- **Legal Assistance**: Provides instant answers to queries related to the **Protection of Women from Domestic Violence Act, 2005**.
+- **KNN-Based Model**: Uses a trained **K-Nearest Neighbors (KNN) model** on `pwdva_data.csv`.
+- **Multimodal Support**: Accepts **text and voice input**.
+- **Secure & Anonymous**: Ensures privacy for users.
+- **Cross-Platform**: Available as a **web app**.
+- **Voice Processing**: Supports microphone input for queries.
+
+---
+
+## 🛠️ Setup Guide
+
+### 1️⃣ Prerequisites
+Ensure you have **Python 3.8+** installed.
+
+### 2️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Install FFmpeg (For Voice Processing)
+- **Windows**: Download FFmpeg from the [official site](https://ffmpeg.org/) and add it to **PATH**.
+- **macOS**: Install via Homebrew:
+  ```bash
+  brew install ffmpeg
+  ```
+- **Linux**:
+  ```bash
+  sudo apt-get install ffmpeg
+  ```
+
+### 4️⃣ Add Dataset
+Ensure `pwdva_data.csv` is placed in the **root directory**.
+
+### 5️⃣ Train the Model
+```bash
+python train_model.py
+```
+
+### 6️⃣ Run the Web Chatbot
+```bash
+python chatbot_server.py
+```
+Access the chatbot at: **[http://localhost:5000](http://localhost:5000)**.
+
+---
+
+## 📂 Project Structure
+
+```
+📂 PWDVA-Chatbot/
+├── 📁 static/                # Frontend assets (CSS, JS)
+│   ├── styles.css            # Styling for web UI
+│   ├── script.js             # Frontend chatbot logic
+│
+├── 📁 templates/             # HTML files
+│   ├── index.html            # Main chatbot UI
+│
+├── train_model.py            # Trains the KNN model
+├── chatbot_server.py         # Flask server for web chatbot
+├── pwdva_data.csv            # Dataset for training
+├── pwdva_knn_model.pkl       # Trained KNN model
+├── requirements.txt          # Required dependencies
+└── README.md                 # Project documentation
+```
+
+---
+
+## 📝 License
+This project is open-source and available under the **MIT License**.
+
+---
+
+## 🤝 Contributing
+Contributions are welcome! Feel free to **fork** this repository, submit **issues**, or create **pull requests**.
+
+---
+
+## 📬 Contact
+For any queries or suggestions, feel free to **open an issue**.
+
+**🚀 Let's make legal assistance more accessible!**
+
