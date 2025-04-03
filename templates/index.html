@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHaven Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='logo.jpg') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1><i class="fas fa-robot"></i> SafeHaven Chatbot</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Hello! I’m SafeHaven, your AI assistant for the Protection of Women from Domestic Violence Act, 2005 (PWDVA). I’m here to help you understand the Act, its provisions, and how it can protect you. Feel free to ask me anything, like "What is a protection order?" or "Who can file a complaint under PWDVA?"—I’ve got you covered!
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Type or speak your message...">
+            <button id="mic-button" title="Speak your message">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
