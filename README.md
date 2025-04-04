@@ -1,90 +1,104 @@
-# PWDVA Chatbot
+# SafeHaven Chatbot 🤝
+ 
+*Empowering Women with Knowledge and Support under the PWDVA 2005*
 
-A chatbot for the **Protection of Women from Domestic Violence Act, 2005**, leveraging a **K-Nearest Neighbors (KNN) model**. This chatbot is available as a **web application**, ensuring accessibility and ease of use.
+## Project Overview
 
----
+SafeHaven is a final year project developed to raise awareness about the **Protection of Women from Domestic Violence Act, 2005 (PWDVA)** in India. This AI-powered chatbot provides a safe, anonymous, and accessible platform for users to learn about their rights, understand legal provisions, and seek guidance on domestic violence issues. SafeHaven supports both text and voice inputs, ensuring inclusivity for users with different needs. The chatbot leverages a K-Nearest Neighbors (KNN) model to answer PWDVA-related queries and offers empathetic conversational responses to create a supportive user experience.
 
-## 🚀 Features
+This project was developed as part of a final year academic requirement, showcasing the application of machine learning, natural language processing (NLP), and web development to address real-world social issues.
 
-- **Legal Assistance**: Provides instant answers to queries related to the **Protection of Women from Domestic Violence Act, 2005**.
-- **KNN-Based Model**: Uses a trained **K-Nearest Neighbors (KNN) model** on `pwdva_data.csv`.
-- **Multimodal Support**: Accepts **text and voice input**.
-- **Secure & Anonymous**: Ensures privacy for users.
-- **Cross-Platform**: Available as a **web app**.
-- **Voice Processing**: Supports microphone input for queries.
+## Features
 
----
+- **PWDVA Information**: Answers queries about the PWDVA 2005 using a trained KNN model (e.g., "What is a protection order?").
+- **Voice and Text Input**: Supports both text and voice inputs via the Web Speech API for accessibility.
+- **Conversational Responses**: Handles greetings and casual queries (e.g., "Hi" → "Hello! How can I assist you with PWDVA today?").
+- **Anonymous and Secure**: Ensures user privacy by not storing personal data, with HTTPS for secure communication.
+- **User-Friendly Interface**: A clean, responsive web app interface with a SafeHaven favicon for branding.
+- **Empathetic Tone**: Designed to be supportive and empathetic, considering the emotional state of users.
 
-## 🛠️ Setup Guide
+## Getting Started
 
-### 1️⃣ Prerequisites
-Ensure you have **Python 3.8+** installed.
+Follow these steps to set up and run the SafeHaven chatbot on your local machine.
 
-### 2️⃣ Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+### Prerequisites
 
-### 3️⃣ Install FFmpeg (For Voice Processing)
-- **Windows**: Download FFmpeg from the [official site](https://ffmpeg.org/) and add it to **PATH**.
-- **macOS**: Install via Homebrew:
+- **Python 3.8+**: Ensure Python is installed on your system.
+- **Git**: For cloning the repository.
+- **Web Browser**: Chrome or Edge (for Web Speech API support).
+
+### Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/safehaven-chatbot.git
+   cd safehaven-chatbot
+   
+2. **Set Up a Virtual Environment (Recommended)**:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   
+4. **Prepare the Dataset**:
+   Place the pwdva_data.csv file (containing 700 rows of PWDVA questions and answers) in the 
+   root directory.
+
+5. **Train the Model**:
+   Run the training script to generate the KNN model:
+   ```bash
+   python train_model.py
+   ```
+   - This creates pwdva_knn_model.pkl in the root directory.
+
+6. **Add the Favicon (Optional)**:
+   - Place safehaven_icon.ico in the static folder to set the favicon for the web app.
+
+### Running the Chatbot
+
+1. **Start the Flask Server**:
+   ```bash
+   python chatbot_server.py
+   ```
+   
+   - The server will run on http://localhost:5000.
+
+2. **Access the Web App**:
+   - Open your browser and navigate to http://localhost:5000.
+   - You’ll see the SafeHaven chatbot interface with a welcome message.
+
+### Usage
+1. **Interact with the Chatbot**:
+   - Type a question (e.g., "What is a protection order?") or click the microphone button to speak.
+   - Press the "Send" button or hit Enter to submit your query.
+   - The chatbot will respond with an answer or a conversational reply.
+
+2. **Example Interactions**:
+   - **User**: "What is a protection order?"
+      - **SafeHaven**: "A protection order under Section 18 of the PWDVA restrains the respondent from committing violence."
+
+  - **User (Voice)**: "What is domestic violence?"
+     - **SafeHaven**: "Domestic violence under the PWDVA includes physical, emotional, sexual, verbal, or economic abuse."
+
+3. **Troubleshooting**:
+   - If the server doesn’t start, check for port conflicts on 5000:
   ```bash
-  brew install ffmpeg
+    netstat -aon | findstr :5000  # On Windows
+    lsof -i :5000  # On macOS/Linux
   ```
-- **Linux**:
-  ```bash
-  sudo apt-get install ffmpeg
-  ```
+  - Ensure all dependencies are installed and the pwdva_knn_model.pkl file exists.
 
-### 4️⃣ Add Dataset
-Ensure `pwdva_data.csv` is placed in the **root directory**.
 
-### 5️⃣ Train the Model
-```bash
-python train_model.py
-```
 
-### 6️⃣ Run the Web Chatbot
-```bash
-python chatbot_server.py
-```
-Access the chatbot at: **[http://localhost:5000](http://localhost:5000)**.
 
----
 
-## 📂 Project Structure
 
-```
-📂 PWDVA-Chatbot/
-├── 📁 static/                # Frontend assets (CSS, JS)
-│   ├── styles.css            # Styling for web UI
-│   ├── script.js             # Frontend chatbot logic
-│
-├── 📁 templates/             # HTML files
-│   ├── index.html            # Main chatbot UI
-│
-├── train_model.py            # Trains the KNN model
-├── chatbot_server.py         # Flask server for web chatbot
-├── pwdva_data.csv            # Dataset for training
-├── pwdva_knn_model.pkl       # Trained KNN model
-├── requirements.txt          # Required dependencies
-└── README.md                 # Project documentation
-```
 
----
 
-## 📝 License
-This project is open-source and available under the **MIT License**.
 
----
 
-## 🤝 Contributing
-Contributions are welcome! Feel free to **fork** this repository, submit **issues**, or create **pull requests**.
 
----
-
-## 📬 Contact
-For any queries or suggestions, feel free to **open an issue**.
-
-**🚀 Let's make legal assistance more accessible!**
 
