@@ -91,6 +91,20 @@ Follow these steps to set up and run the SafeHaven chatbot on your local machine
   ```
   - Ensure all dependencies are installed and the pwdva_knn_model.pkl file exists.
 
+### Contributing
+Contributions are welcome! If you’d like to improve SafeHaven, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: git checkout -b feature/your-feature.
+3. Make your changes and commit: git commit -m "Add your feature".
+4. Push to your branch: git push origin feature/your-feature.
+5. Open a pull request.
+
+
+💖 Built with care for a safer tomorrow.
+
+
+
 
 
 
